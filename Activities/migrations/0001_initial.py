@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('donation_type', models.CharField(choices=[('MTR', 'Monetary'), ('RSR', 'Resources'), ('VLT', 'Volunteers')], default='MTR', editable=False, max_length=3)),
                 ('donation_description', models.CharField(max_length=400)),
-                ('activity', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='activities.Activity')),
+                ('activity', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='Activities.Activity')),
             ],
         ),
     ]

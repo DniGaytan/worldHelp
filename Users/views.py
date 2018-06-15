@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import logout, authenticate, login
 from .forms import UserForm
+from django.http import HttpResponse
 
 
 
@@ -41,3 +42,6 @@ def userLogout(request):
     logout(request)
     form = UserForm(request.POST or None)
     return #Aqui va la pagina de login, no dejes pasar al usuario a otro lado del sitio hasta que se registre o se loggee
+
+def UserPage(request):
+    return HttpResponse("<h1>Pagina de tu usuario</h1>")

@@ -12,6 +12,10 @@ class Activity(models.Model):
     activity_end_date = models.DateField()
     activity_picture = models.ImageField()
 
+    def __str__(self):
+        return self.activity_name
+
+
 class Donation(models.Model):
     MONETARY = 'MTR'
     RESOURCE = 'RSR'
