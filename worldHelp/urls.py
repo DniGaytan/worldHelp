@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from Activities import urls as ActUrls
 from Users import urls as UserUrls
-from . import views
+from Principal import urls as MainUrls
 
 #Cuando el usuario pida alguna pagina, ven aqui.
 
@@ -13,12 +13,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     #www.worldhelp.com/
-    path('', views.index, name = 'Main'),
+    path('', include(MainUrls), name = 'Main'),
 
     #www.worldhelp.com/events
-    path('activities/',include(ActUrls)),
+    path('activities/',include(ActUrls), name = 'Acts'),
 
     #www.worldhelp.com/user/
-    path('user/',include(UserUrls))
+    path('user/',include(UserUrls), name = 'User')
 
 ]
