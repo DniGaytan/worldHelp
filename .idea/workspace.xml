@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ba22fb0c-ef72-4c25-9a6e-e8b8109cbf22" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Principal/templates/Principal/Main.html" afterPath="$PROJECT_DIR$/Principal/templates/Principal/Main.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,7 +25,11 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="56">
               <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-              <folding />
+              <folding>
+                <marker date="1529549016791" expanded="false" signature="2734:2768" ph="..." />
+                <marker date="1529549016791" expanded="false" signature="3246:3280" ph="..." />
+                <marker date="1529549016791" expanded="false" signature="3757:3791" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -286,7 +289,21 @@
       <option name="project" value="LOCAL" />
       <updated>1529544815711</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Se agrego carrusel a main.html">
+      <created>1529548862746</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1529548862746</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Se modifico el navbar de main.html">
+      <created>1529549075081</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529549075081</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -324,7 +341,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agrego el navbar al main.html" />
     <MESSAGE value="Se modifico el navbar del main.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se modifico el navbar del main.html" />
+    <MESSAGE value="Se agrego carrusel a main.html" />
+    <MESSAGE value="Se modifico el navbar de main.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se modifico el navbar de main.html" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -337,7 +356,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1529549016791" expanded="false" signature="2734:2768" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3246:3280" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3757:3791" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -353,7 +376,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1529549016791" expanded="false" signature="2734:2768" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3246:3280" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3757:3791" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -369,7 +396,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1529549016791" expanded="false" signature="2734:2768" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3246:3280" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3757:3791" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -601,7 +632,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
+          <folding>
+            <marker date="1529549016791" expanded="false" signature="2734:2768" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3246:3280" ph="..." />
+            <marker date="1529549016791" expanded="false" signature="3757:3791" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
