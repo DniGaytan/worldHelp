@@ -1,0 +1,16 @@
+.topnav {
+    overflow: hidden;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+div.jumbotron {
+    background-color: lightgrey;
+    width: 300px;
+    padding: 5px;
+    margin: 5px;
+}
