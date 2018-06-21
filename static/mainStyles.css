@@ -125,6 +125,14 @@
   background-color: #c1c8e4;
 }
 
+.event-wrapper{
+  background-color: #84ceeb;
+}
+
+
+.card{
+  margin: 0.5rem auto;
+}
 
 .center{
   display: block;
@@ -142,4 +150,9 @@
   font-family: arial;
   font-size: 18px;
   color: #b8c6c4;
+}
+
+.goal-title{
+  font-family: arial;
+  margin: 2% 50%;
 }
