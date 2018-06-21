@@ -29,7 +29,7 @@
 <!-- Navbar -->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light navbar-default fixed-top">
-          <a class="navbar-brand" href="#">World Help</a>
+          <a class="navbar-brand" href="">World Help</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -51,6 +51,9 @@
                   <a class="dropdown-item" href="#">Dinero</a>
                 </div>
               </li>
+                <li class="nav-item" style="padding-left: 650px">
+                    <a class="nav-link" href="#">Log In</a>
+                </li>
             </ul>
           </div>
         </nav>
@@ -60,22 +63,22 @@
 <!-- Searchbar -->
         <div  align="center" background-color="grey">
             <h1>Que actividad estas buscando?</h1>
-            <div class="search-container">
+            <br>
+            <div class="search-container" style="width: 700px">
                 <form action="#">
                   <input type="text" placeholder="Search.." name="search">
                  </form>
              </div>
         </div>
     </div>
-
+<br>
 
 
 <!-- Cartas de las activididades en filas de 4 -->
     <div class = "container-fluid event-wrapper">
-        <div class="row" style="margin: 0 auto 0 auto;">
-
-<!-- Caja a la izquierda para filtrar por fecha -->
-            <div clas="container" align="left">
+    <div class="row" style="margin: 0 auto 0 auto;">
+    <!-- Caja a la izquierda para filtrar por fecha -->
+            <div clas="container" align="left" style="margin-bottom: 20px">
                 <div class="jumbotron" >
                     <h3>Fecha</h3>
                     <h4><a href="#">Esta semana</a> </h4>
@@ -83,12 +86,14 @@
                     <h4><a href="#">Estos 3 meses</a> </h4>
                     <h4><a href="#">Estos 4 meses</a> </h4>
                 </div>
-            </div>
-
-<!-- Caja a la izquierda abajo de las fechas para filtrar por eje -->
-            <div clas="container" align="left">
+                <br>
+    <!-- Caja a la izquierda abajo de las fechas para filtrar por eje -->
                 <div class="jumbotron" >
-                    <p>something here</p>
+                    <h3>Temas</h3>
+                    <h4><a href="#">Sustentabilidad</a> </h4>
+                    <h4><a href="#">Innovacion</a> </h4>
+                    <h4><a href="#">Social</a> </h4>
+                    <h4><a href="#">Valores</a> </h4>
                 </div>
             </div>
             {% for act in all_acts %}
@@ -100,7 +105,6 @@
                     </div>
                   </div>
             {% endfor %}
-            </div>
     </div>
 
 <!-- Apartado de about WorldHelp -->
