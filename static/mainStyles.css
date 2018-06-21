@@ -127,11 +127,12 @@
 
 .event-wrapper{
   background-color: #84ceeb;
+  padding: 2rem;
 }
 
 
 .card{
-  margin: 0.5rem auto;
+  margin: 0.7rem auto;
 }
 
 .center{
@@ -154,5 +155,50 @@
 
 .goal-title{
   font-family: arial;
-  margin: 2% 50%;
+  margin: 2% 45%;
+}
+
+.description-section{
+  padding-top: 3.5rem;
+  background-color: #f7f7f7;
+}
+
+.description-body p{
+  text-align: justify;
+}
+
+.description-body h2{
+  font-weight: 600;
+}
+
+.description-body h4{
+  font-weight:600;
+
+}
+
+.partner-section{
+  margin: 0;
+  padding: 1rem;
+  background-color: #f7f7f7;
+}
+
+.partner-title{
+  margin:2% 45%;
+}
+
+.partner-name{
+  margin: 0.5rem auto;
+}
+
+.partner-logo{
+  height: 100px;
+  width: auto;
+  background-image: none;
+}
+
+.footer-text{
+  font-family: arial;
+  font-size: 18px;
+  font-weight: 600;
+  color: #c1c8e4; 
 }
