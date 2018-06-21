@@ -1,12 +1,29 @@
+{% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <head>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainStyles.css' %}">
+
+    <!--Bootstrap required tags -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+    <!-- JQuery, Popperjs and javascript scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+    <!-- page header -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta charset="UTF-8">
-    <title>Eventos</title>
+    <title>Activities</title>
+
 </head>
 <body>
-    <h3>Here are all the activities</h3>
+
     <ul>
         {% for act in all_acts %}
 
