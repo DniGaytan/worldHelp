@@ -1,52 +1,9 @@
+{% extends 'Principal/base.html'%}
 {% load static from staticfiles %}
-<!DOCTYPE html>
-
-<html lang="en">
-  <head>
-      <link rel="stylesheet" type="text/css" href="{% static 'mainStyles.css' %}">
-
-      <!--Bootstrap required tags -->
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-      <!-- JQuery, Popperjs and javascript scripts -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
-      <!-- page header -->
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta charset="UTF-8">
-      <title>World Help</title>
-
-
-  </head>
-  <body>
-
-      <!-- navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light navbar-default fixed-top">
-        <a class="navbar-brand" href="#">World Help</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto navbar-right justify-content-end">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'activities:Events' %}">Eventos</a>
-            </li>
-          </ul>
-          <ul class="justify-content-end navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'users:user_login' %}">Inicia sesion</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <!-- carousel -->
+{% block bodyContent %}
+ <!-- carousel -->
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -206,10 +163,4 @@
         </div>
       </div>    
     </div>
-
-
-    <div class="container-fluid"style="background-color:#3e8e84; " >
-      <h5 class="footer-text" style="margin-bottom: 0; left: 50%; text-align: center;">World Help es una organizacion sin fines de lucro</h5>
-    </div>
-  </body>
-<html>
+{% endblock %}

@@ -1,101 +1,43 @@
+{% extends 'Activities/base.html'%}
 {% load static from staticfiles %}
-<!DOCTYPE html>
 
-<html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'mainStyles.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'activities/activitiesHtmlStyle.css' %}">
-
-    <!--Bootstrap required tags -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+{% block styleSheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'detailHtmlStyle.css' %}">
+{% endblock %}
 
 
-    <!-- JQuery, Popperjs and javascript scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
-    <!-- page header -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="UTF-8">
-    <title>World Help</title>
-
-
-</head>
-
-<body>
-
- <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-default fixed-top">
-      <a class="navbar-brand" href="">World Help</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto navbar-right justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="/activities">Actividades</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Organizaciones</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Donaciones
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Recursos</a>
-              <a class="dropdown-item" href="#">Voluntarios</a>
-              <a class="dropdown-item" href="#">Dinero</a>
-            </div>
-          </li>     
-        </ul>
-        <ul class="justify-content-end navbar-nav">
-         <li class="nav-item">
-             <a class="nav-link" href="#">Inicia sesion</a>
-         </li>
-        </ul>
+{% block bodyContent%}
+  <!-- # -->
+      <div class="container">
+          <div class="row" style="padding-left: 10px">
+              <div>
+                  <img src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" width="500 px" height="300 px">
+              </div>
+              <div class="act-info" style="padding-left: 40px" >
+                  <br>
+                  <br>
+                  <br>
+                  <h1>{{ act.activity_name }}</h1>
+                  <br>
+                  <h3 align="center"> <a href="/user">{{ act.user }} </a></h3>
+                  <br>
+                  <button type="button" class="btn btn-success" style="margin-left: 210px">Registrate</button>
+              </div>
+         </div>
+          <br>
+              <hr class="style1">
+          <br>
+          <div class="row" style="padding-left: 10px">
+              <br>
+              <div>
+                  <h3>Descripción</h3>
+                  <h4 class="col-md-10">{{ act.activity_description }}</h4>
+              </div>
+              <div>
+                  <h4>Fecha</h4>
+                  <h5 class="col-md-12" class="text-secondary">{{ act.activity_start_date }}</h5>
+                  <h5 class="col-md-12">{{ act.activity_end_date }}</h5>
+              </div>
+          </div>
       </div>
-    </nav>
- <br>
- <br>
- <br>
-
-<!-- # -->
-    <div class="container">
-        <div class="row" style="padding-left: 10px">
-            <div>
-                <img src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" width="500 px" height="300 px">
-            </div>
-            <div class="act-info" style="padding-left: 40px" >
-                <br>
-                <br>
-                <br>
-                <h1>{{ act.activity_name }}</h1>
-                <br>
-                <h3 align="center"> <a href="/user">{{ act.user }} </a></h3>
-                <br>
-                <button type="button" class="btn btn-success" style="margin-left: 210px">Registrate</button>
-            </div>
-       </div>
-        <br>
-            <hr class="style1">
-        <br>
-        <div class="row" style="padding-left: 10px">
-            <br>
-            <div>
-                <h3>Descripción</h3>
-                <h4 class="col-md-10">{{ act.activity_description }}</h4>
-            </div>
-            <div>
-                <h4>Fecha</h4>
-                <h5 class="col-md-12" class="text-secondary">{{ act.activity_start_date }}</h5>
-                <h5 class="col-md-12">{{ act.activity_end_date }}</h5>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+{% endblock %}
