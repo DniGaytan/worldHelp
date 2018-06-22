@@ -2,218 +2,214 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="{% static 'mainStyles.css' %}">
+  <head>
+      <link rel="stylesheet" type="text/css" href="{% static 'mainStyles.css' %}">
 
-    <!--Bootstrap required tags -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
-    <!-- JQuery, Popperjs and javascript scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+      <!--Bootstrap required tags -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 
-    <!-- page header -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta charset="UTF-8">
-    <title>World Help</title>
+      <!-- JQuery, Popperjs and javascript scripts -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
-</head>
-<body>
-
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light navbar-default fixed-top">
-      <a class="navbar-brand" href="#">World Help</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto navbar-right justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'activities:Events'%}">Eventos</a>
-          </li>
-        </ul>
-        <ul class="justify-content-end navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'users:user_login'%}">Inicia sesion</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      <!-- page header -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta charset="UTF-8">
+      <title>World Help</title>
 
 
-    <!-- carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active" height="325px" width="600px" style="max-width: auto; max-height: 700px">
-        <img class="d-block w-100 center" src="{% static 'main-ecologia-5.jpg' %}" alt="First slide" >
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="carousel-color-letra-titulo">Salva al planeta</h2>
-          <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
+  </head>
+  <body>
 
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light navbar-default fixed-top">
+        <a class="navbar-brand" href="#">World Help</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto navbar-right justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'activities:Events' %}">Eventos</a>
+            </li>
+          </ul>
+          <ul class="justify-content-end navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:user_login' %}">Inicia sesion</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="carousel-item" height="325px" width="600px" style="max-width: auto; max-height: 700px">
-        <img class="d-block w-100" src="{% static 'main-ecologia-3.jpg' %}" alt="Second slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="carousel-color-letra-titulo">Reduce la contaminacion</h2>
-          <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
-        </div>
-      </div>
-      <div class="carousel-item" height="325px" width="600px" style="max-width: auto; max-height: 700px">
-        <img class="d-block w-100" src="{% static 'main-ecologia-4.jpg'%}" alt="Third slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="carousel-color-letra-titulo">Dale futuro al mundo</h2>
-          <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
+      </nav>
 
-        </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Siguiente</span>
-    </a>
-  </div>
+      <!-- carousel -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" height="325px" width="600px" style="max-width: auto; max-height: 700px">
+          <img class="d-block w-100 center" src="{% static 'main-ecologia-5.jpg' %}" alt="First slide" >
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="carousel-color-letra-titulo">Salva al planeta</h2>
+            <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
 
-  <div class = "container-fluid event-wrapper">
-    <div class="row" style="margin: 0 auto 0 auto;">
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
-      </div>
-    </div> 
-  </div>
-
-  <div class="description-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <div>
-            <img src="https://dummyimage.com/600x600/c1c8e4/291329.png&text=desc+img" style="width:100%;"></img>
           </div>
         </div>
-        <div class="col-md-6"> 
-          <div class="description-body">
-              <h2>¿Que hacemos en World Help?</h2>
-              <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, um passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
-              <h4>Asi es como lo hacemos</h4>
-              <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
-              <h4>Objetivo</h4>
-              <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
-              <h4>¿Por que World Help?</h4>
-              <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        <div class="carousel-item" height="325px" width="600px" style="max-width: auto; max-height: 700px">
+          <img class="d-block w-100" src="{% static 'main-ecologia-3.jpg' %}" alt="Second slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="carousel-color-letra-titulo">Reduce la contaminacion</h2>
+            <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
+          </div>
+        </div>
+        <div class="carousel-item" height="325px" width="600px" style="max-width: auto; max-height: 700px">
+          <img class="d-block w-100" src="{% static 'main-ecologia-4.jpg'%}" alt="Third slide">
+          <div class="carousel-caption d-none d-md-block">
+            <h2 class="carousel-color-letra-titulo">Dale futuro al mundo</h2>
+            <p class="carousel-color-letra-parrafo">Unete a los miles de proyectos registrados en World Help para contribuir al medio ambiente</p>
+
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+
+    <div class = "container-fluid event-wrapper">
+      <div class="row" style="margin: 0 auto 0 auto;">
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="description-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              <img src="https://dummyimage.com/600x600/c1c8e4/291329.png&text=desc+img" style="width:100%;"></img>
             </div>
-         </div> 
-          
+          </div>
+          <div class="col-md-6"> 
+            <div class="description-body">
+                <h2>¿Que hacemos en World Help?</h2>
+                <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a  Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, um passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+                <h4>Asi es como lo hacemos</h4>
+                <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+                <h4>Objetivo</h4>
+                <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+                <h4>¿Por que World Help?</h4>
+                <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+              </div>
+           </div> 
+            
+        </div>
       </div>
     </div>
-  </div>
 
 
-  <div class="partner-section">
-    <h1 style="left:50%; text-align: center;">Organizaciones asociadas</h1>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="partner-name">
-          <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+    <div class="partner-section">
+      <h1 style="left:50%; text-align: center;">Organizaciones asociadas</h1>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="partner-name">
+            <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+          </div>
+          <div class="partner-name">
+            <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+          </div>
+          <div class="partner-name">
+            <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+          </div>
+          <div class="partner-name">
+            <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+          </div>
+          <div class="partner-name">
+            <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
+          </div>
         </div>
-        <div class="partner-name">
-          <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
-        </div>
-        <div class="partner-name">
-          <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
-        </div>
-        <div class="partner-name">
-          <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
-        </div>
-        <div class="partner-name">
-          <img class="partner-logo" src="{% static 'brand-greenpeace-logo.png' %}">
-        </div>
-      </div>
-    </div>    
-  </div>
+      </div>    
+    </div>
 
 
-  <div class="container-fluid"style="background-color:#3e8e84; " >
-    <h5 class="footer-text" style="margin-bottom: 0; left: 50%; text-align: center;">World Help es una organizacion sin fines de lucro</h5>
-  </div>
-
-
-
-</body>
+    <div class="container-fluid"style="background-color:#3e8e84; " >
+      <h5 class="footer-text" style="margin-bottom: 0; left: 50%; text-align: center;">World Help es una organizacion sin fines de lucro</h5>
+    </div>
+  </body>
 <html>
