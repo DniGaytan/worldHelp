@@ -10,7 +10,7 @@ class Activity(models.Model):
     activity_description = models.CharField(max_length=700)
     activity_start_date = models.DateField()
     activity_end_date = models.DateField()
-    activity_picture = models.ImageField()
+    activity_picture = models.FileField()
 
     def __str__(self):
         return self.activity_name
