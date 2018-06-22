@@ -7,7 +7,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def register(request):
+def userRegister(request):
     form = UserForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
@@ -42,6 +42,3 @@ def userLogout(request):
     logout(request)
     form = UserForm(request.POST or None)
     return #Aqui va la pagina de login, no dejes pasar al usuario a otro lado del sitio hasta que se registre o se loggee
-
-def UserPage(request):
-    return HttpResponse("<h1>Pagina de tu usuario</h1>")
