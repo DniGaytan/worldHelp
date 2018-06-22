@@ -41,14 +41,30 @@
                         <h4><a href="#">Valores</a> </h4>
                     </div>
                 </div>
-                {% for act in all_acts %}
+                {% for evento in all_acts %}
                     <div class="card" style="width: 18rem;">
+                      {% if evento.activity_picture%}
+                        <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
+                      {% else %}
                         <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-                        <div class="card-body">
-                            <h3><a href="{{ act.id }}"> {{ act.activity_name }} </a></h3>
-                          <p class="card-text">{{ act.activity_description }}</p>
-                        </div>
+                      {% endif %}
+                      <div class="card-body">
+                        <h3 class="card-title">{{evento.activity_name}}</h3>
+                        <p class="card-text">{{evento.activity_description}}</p>
                       </div>
+                      <a href="{% url 'activities:Act Details' evento.id %}" class="btn btn-primary">Conoce mas</a>
+                      {% if evento.activity_type == 'vida'%}
+                          <div class="eje-carta" style="background-color: green; height: 11px; width: auto; margin: 0;"></div>
+                        {% elif evento.activity_type == 'innovacion'%}
+                          <div class="eje-carta" style="background-color: yellow; height: 11px; width: auto; margin: 0;"></div>
+                        {% elif evento.activity_type == 'energia'%}
+                          <div class="eje-carta" style="background-color: orange; height: 11px; width: auto; margin: 0;"></div>
+                        {% elif evento.activity_type == 'social'%}
+                          <div class="eje-carta" style="background-color: blue; height: 11px; width: auto; margin: 0;"></div>
+                        {% endif %}
+                    </div>
+                    {% empty %}
+                    <p>No hay nada en eventos</p>
                 {% endfor %}
         </div>
       </div>

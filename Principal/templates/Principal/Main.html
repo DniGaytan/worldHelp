@@ -48,25 +48,28 @@
     <div class = "container-fluid event-wrapper">
       <div class="row" style="margin: 0 auto 0 auto;">
 
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-        </div>
-
         {% for evento in eventos %}
 
           <div class="card" style="width: 18rem;">
             {% if evento.activity_picture%}
-              <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap">
+              <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
             {% else %}
               <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
             {% endif %}
             <div class="card-body">
-              <h3>{{evento.activiy_name}}</h3>
+              <h3 class="card-title">{{evento.activity_name}}</h3>
               <p class="card-text">{{evento.activity_description}}</p>
             </div>
+            <a href="{% url 'activities:Act Details' evento.id %}" class="btn btn-primary">Conoce mas</a>
+            {% if evento.activity_type == 'vida'%}
+                <div class="eje-carta" style="background-color: green; height: 11px; width: auto; margin: 0;"></div>
+              {% elif evento.activity_type == 'innovacion'%}
+                <div class="eje-carta" style="background-color: yellow; height: 11px; width: auto; margin: 0;"></div>
+              {% elif evento.activity_type == 'energia'%}
+                <div class="eje-carta" style="background-color: orange; height: 11px; width: auto; margin: 0;"></div>
+              {% elif evento.activity_type == 'social'%}
+                <div class="eje-carta" style="background-color: blue; height: 11px; width: auto; margin: 0;"></div>
+              {% endif %}
           </div>
 
         {% empty %}
