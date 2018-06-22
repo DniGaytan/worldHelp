@@ -1,6 +1,6 @@
 from django.urls import path
 from Activities import views
-
+app_name='activities'
 urlpatterns = [
    #path('cuando se escriba esto', ejecuta esto)
 
