@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import logout, authenticate, login
 from .forms import UserForm
 from django.http import HttpResponse
+from django.shortcuts import redirect
+from django.urls import reverse
 
 
 
@@ -18,25 +20,36 @@ def userRegister(request):
             user.save()
             user = authenticate(username=username, password=password)
             login(request, user)
-            return #Aqui va la pagina de inicio
+            return redirect(reverse('principal:Main'))
+    else:
+        context = {
+            "form": form,
+        }
 
-    context = {
-        "form": form,
-    }
-
-    return #Aqui va la pagina de registro
+        return #Aqui va la pagina de registro con los campos en blanco
 
 def userLogin(request):
     if request.method == "POST":
         username = request.POST['username']
-        passoword = request.POST['password']
+        password = request.POST['password']
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
             login(request, user)
-            return #Aqui va la pagina de inicio
+            return redirect(reverse('principal:Main'))
         else:
-            return #Aqui va la pagina de login con el error de que la cuenta es inexistente, hubo un error en el login o que fue baneada
-    return #Aqui va la pagina de login
+            context = {
+                'form': UserForm(None),
+                'error': True
+            }
+            return render(request, template_name = 'Users/login.html', context = context)
+    else:
+        context = {
+            'form': UserForm(None),
+            'error': False
+        }
+        
+        return render(request, template_name = 'Users/login.html', context = context)
+
 
 def userLogout(request):
     logout(request)

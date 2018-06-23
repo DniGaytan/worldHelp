@@ -1,0 +1,14 @@
+{% extends 'Users/base.html'%}
+{% load static from staticfiles %}
+
+
+{% block bodyContent %}
+<div style="top: 100px; height: 100px">
+	<form action="{% url 'users:user_login' %}" method='post'>
+		{% csrf_token %}
+		{{form}}
+		<button type="submit" value="Entrar" name="Entrar"></button>
+	</form>
+</div>
+{% endblock %}
+
