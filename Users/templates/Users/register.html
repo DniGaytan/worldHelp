@@ -1,0 +1,15 @@
+{% extends 'Users/base.html'%}
+{% load static from staticfiles %}
+
+{% block bodyContent%}
+<div style='margin: 0 30rem;'>
+	<form action="{% url 'users:user_register' %}" method='post'>
+		{% csrf_token %}
+		{% for formField in form %} 
+			<label for='{{formField.id_of_label}}'>{{formField.label}}:</label>
+			{{formField}}
+		{% endfor %}
+  		<button type="submit" class="btn btn-primary">Entrar</button>
+	</form>
+</div>
+{% endblock %}

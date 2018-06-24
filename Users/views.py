@@ -21,12 +21,18 @@ def userRegister(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return redirect(reverse('principal:Main'))
+        else:
+            context = {
+                'form': form(None),
+                'errrors': form.errors,
+            }
+            return render(request, template_name='Users/register.html', context = context)
     else:
         context = {
-            "form": form,
+            "form": form
         }
 
-        return #Aqui va la pagina de registro con los campos en blanco
+        return render(request, template_name='Users/register.html', context = context)
 
 def userLogin(request):
     if request.method == "POST":

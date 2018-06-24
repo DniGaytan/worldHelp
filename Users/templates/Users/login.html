@@ -3,7 +3,7 @@
 
 
 {% block bodyContent %}
-<div style='margin: 0 30rem;'>
+<div style='margin: auto 30rem;'>
 	<form action="{% url 'users:user_login' %}" method='post'>
 		{% csrf_token %}
 		{% for formField in form %} 
@@ -12,8 +12,14 @@
 				{{formField}}
 			{% endif %}
 		{% endfor %}
-  		<button type="submit" class="btn btn-primary">Entrar</button>
+  		<button type="submit" class="btn btn-primary" style='margin: 1rem 0;'>Entrar</button>
 	</form>
+</div>
+
+<div style='margin: 1rem 30rem;'>
+
+	<a href="{% url 'users:user_register' %}">¿No tienes cuenta?</a>
+
 </div>
 {% endblock %}
 
