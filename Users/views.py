@@ -23,13 +23,14 @@ def userRegister(request):
             return redirect(reverse('principal:Main'))
         else:
             context = {
-                'form': form(None),
-                'errrors': form.errors,
+                'form': form,
+                'errors': form.errors,
             }
             return render(request, template_name='Users/register.html', context = context)
     else:
         context = {
-            "form": form
+            'form': form,
+            'errors': None,
         }
 
         return render(request, template_name='Users/register.html', context = context)
@@ -45,7 +46,7 @@ def userLogin(request):
         else:
             context = {
                 'form': UserForm(None),
-                'error': True
+                'errors': True
             }
             return render(request, template_name = 'Users/login.html', context = context)
     else:
