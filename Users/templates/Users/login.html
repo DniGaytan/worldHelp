@@ -3,11 +3,16 @@
 
 
 {% block bodyContent %}
-<div style="top: 100px; height: 100px">
+<div style='margin: 0 30rem;'>
 	<form action="{% url 'users:user_login' %}" method='post'>
 		{% csrf_token %}
-		{{form}}
-		<button type="submit" value="Entrar" name="Entrar"></button>
+		{% for formField in form %} 
+			{% if formField.name != 'email' %}
+				<label for='{{formField.id_of_label}}'>{{formField.label}}:</label>
+				{{formField}}
+			{% endif %}
+		{% endfor %}
+  		<button type="submit" class="btn btn-primary">Entrar</button>
 	</form>
 </div>
 {% endblock %}
