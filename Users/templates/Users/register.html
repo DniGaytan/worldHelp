@@ -10,7 +10,11 @@
 			{{formField}}
 			{% for key, value in errors.items %}
 				{% if key == formField.name %}
-					<p style="color:red;">{{value.0}}</p>
+					{% if key == 'password' %}
+						<p style="color:red;">{{value.0}}</p>
+					{% else %}
+						<p style="color:red;">{{value.1}}</p>
+					{% endif%}
 				{% endif %}
 			{% endfor %}
 		{% endfor %}
