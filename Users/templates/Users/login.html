@@ -12,6 +12,9 @@
 				{{formField}}
 			{% endif %}
 		{% endfor %}
+		{% if errors %}
+			<p style="color: red;">El usuario o la contraseña esta incorrecto</p>
+		{% endif %}
   		<button type="submit" class="btn btn-primary" style='margin: 1rem 0 0 0;'>Entrar</button>
 	</form>
 </div>

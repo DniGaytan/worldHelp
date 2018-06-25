@@ -10,7 +10,7 @@
 			{{formField}}
 			{% for key, value in errors.items %}
 				{% if key == formField.name %}
-					<p>{{value}}</p>
+					<p style="color:red;">{{value.0}}</p>
 				{% endif %}
 			{% endfor %}
 		{% endfor %}

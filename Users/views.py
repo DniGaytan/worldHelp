@@ -22,6 +22,9 @@ def userRegister(request):
             login(request, user)
             return redirect(reverse('principal:Main'))
         else:
+            if len(form.cleaned_data['password']) < 8:
+                form.add_error('password', 'La contraseña es muy corta')
+                
             context = {
                 'form': form,
                 'errors': form.errors,
