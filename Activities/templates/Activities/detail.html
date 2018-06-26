@@ -11,7 +11,7 @@
       <div class="container-fluid" style="min-height: 889px;">
           <div class="row" style="padding-left: 10px">
               <div>
-                  <img src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" width="500 px" height="300 px">
+                  <img src="{{act.activity_picture.url}}" width="500 px" height="300 px">
               </div>
               <div class="act-info" style="padding-left: 40px" >
                   <br>
@@ -23,6 +23,14 @@
                   <br>
                   <button type="button" class="btn btn-success" style="margin-left: 210px">Registrate</button>
                   <a href="{% url 'activities:newDonation' act.id %}">Añadir donacion</a>
+
+                  {% for donation in donations%}
+                    <div>
+                      <h3>{{donation.donation_name}}</h3>
+                      <p>{{donation.donation_description}}</p>
+                      <h4>{{donation.donation_type}}</h4>
+                    </div>
+                  {% endfor %}
               </div>
          </div>
           <br>

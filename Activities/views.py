@@ -23,7 +23,11 @@ def details(request, activity_id):
         act = Activity.objects.get(pk=activity_id)
     except Activity.DoesNotExist :
         raise Http404("Activity does not exist")
-    return render(request, template_name='Activities/detail.html', context = {'act': act})
+    context = {
+        'act': act,
+        'donations': Donation.objects.filter(activity = Activity.objects.get(pk=activity_id))
+    }
+    return render(request, template_name='Activities/detail.html', context = context) 
 
 def crear_evento(request):
 
@@ -78,5 +82,5 @@ def crear_donacion(request, activity_id):
             }
             return render(request, template_name="Activities/newDonation.html", context = context)
     else:
-        return 'Hola'
+        raise Http404('Prohibido pasar')
 
