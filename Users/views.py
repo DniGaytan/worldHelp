@@ -24,9 +24,9 @@ def userRegister(request):
         else:
             if len(form.cleaned_data['password']) < 8:
                 form.add_error('password', 'La contraseña es muy corta')
-            if form.errors['username']:
+            if 'username' in form.errors:
                 form.add_error('username', 'Una cuenta ya ha sido registrada con ese usuario')
-            if form.errors['email']:
+            if 'email' in form.errors:
                 form.add_error('email', 'Ingresa un correo valido')
                 
             context = {

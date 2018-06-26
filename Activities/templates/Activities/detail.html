@@ -17,11 +17,12 @@
                   <br>
                   <br>
                   <br>
-                  <h1>{{ act.activity_name }}</h1>
+                  <h1>{{ act.user }}</h1>
                   <br>
                   <h3 align="center"> <a href="/user">{{ act.user }} </a></h3>
                   <br>
                   <button type="button" class="btn btn-success" style="margin-left: 210px">Registrate</button>
+                  <a href="{% url 'activities:newDonation' act.id %}">Añadir donacion</a>
               </div>
          </div>
           <br>

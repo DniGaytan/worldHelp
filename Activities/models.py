@@ -30,6 +30,9 @@ class Activity(models.Model):
         default = EJE_VIDA,
     )
 
+    def __str__(self):
+        return str(self.id)
+
 
 
 class Donation(models.Model):
@@ -43,11 +46,14 @@ class Donation(models.Model):
         (VOLUNTEER, 'Volunteers')
     )
 
-    activity = models.ForeignKey(Activity, default = 1, on_delete=models.CASCADE)
+    activity = models.ForeignKey(Activity, default = 42, on_delete=models.CASCADE)
+    donation_name = models.CharField(max_length=10, default="")
     donation_type = models.CharField(
         max_length = 3,
         choices = DONATION_TYPES,
         default = MONETARY,
     )
-    donation_description = models.CharField(max_length = 400)
+    donation_description = models.CharField(max_length=400)
 
+    def __str__(self):
+        return self.donation_name

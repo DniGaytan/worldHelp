@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Activity, Donation
 from django.http import Http404
-from .forms import EventForm
+from .forms import EventForm, DonationForm
 from django.contrib.auth.models import User
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
@@ -25,14 +25,15 @@ def details(request, activity_id):
         raise Http404("Activity does not exist")
     return render(request, template_name='Activities/detail.html', context = {'act': act})
 
-def crear_Evento(request):
+def crear_evento(request):
 
     if request.user.is_authenticated:
         if request.method == 'POST':
             form = EventForm(request.POST, request.FILES)
             if form.is_valid():
-                form.user = User.objects.get(username = request.user.username)
+                user = User.objects.get(pk=request.user.id)
                 event = form.save()
+                event.user = user
                 event.save()
                 return redirect(reverse('activities:actDetails', kwargs = {'activity_id': event.id}))
             else:
@@ -53,5 +54,29 @@ def crear_Evento(request):
     else:
         raise Http404
 
-
+def crear_donacion(request, activity_id):
+    if request.user.is_authenticated :
+        if request.method == 'POST':
+            form = DonationForm(request.POST)
+            if form.is_valid():
+                activity = Activity.objects.get(pk=activity_id)
+                donation = form.save()
+                donation.activity = activity
+                donation.save()
+                return redirect(reverse('activities:actDetails', kwargs = {'activity_id': activity_id}))
+            else:
+                context = {
+                    'form': DonationForm,
+                    'errorList': form.errors,
+                    'activity_id': activity_id
+                }
+                return render(request, template_name="Activities/newDonation.html", context = context)
+        else:
+            context = {
+                'form': DonationForm(None),
+                'activity_id': activity_id
+            }
+            return render(request, template_name="Activities/newDonation.html", context = context)
+    else:
+        return 'Hola'
 

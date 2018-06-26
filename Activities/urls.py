@@ -5,12 +5,9 @@ app_name='activities'
 
 urlpatterns = [
    #path('cuando se escriba esto', ejecuta esto)
-
-    #www.worldhelp.com/events
     path('',views.events, name = 'Events'),
-
-    #www.worldhelp.com/events/activity_id
     path('details/<activity_id>/', views.details, name='actDetails'),
+    path('nuevo/', views.crear_evento, name='newEvent'),
+    path('nuevo/<activity_id>/donacion', views.crear_donacion, name="newDonation")
 
-    path('nuevo/', views.crear_Evento, name='newEvent'),
 ]
