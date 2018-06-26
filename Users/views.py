@@ -68,4 +68,4 @@ def userLogin(request):
 def userLogout(request):
     logout(request)
     form = UserForm(request.POST or None)
-    return #Aqui va la pagina de login, no dejes pasar al usuario a otro lado del sitio hasta que se registre o se loggee
+    return redirect(reverse('principal:Main'))

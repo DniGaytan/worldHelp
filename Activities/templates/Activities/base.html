@@ -43,9 +43,15 @@
             </li>
           </ul>
           <ul class="justify-content-end navbar-nav">
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'users:user_logout' %}">Cierra sesion</a>
+            </li>
+            {% else %}
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'users:user_login' %}">Inicia sesion</a>
             </li>
+            {% endif %}
           </ul>
         </div>
       </nav>
