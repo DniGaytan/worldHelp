@@ -10,7 +10,7 @@ urlpatterns = [
     path('',views.events, name = 'Events'),
 
     #www.worldhelp.com/events/activity_id
-    path('details/<activity_id>/', views.details, name='Act Details'),
+    path('details/<activity_id>/', views.details, name='actDetails'),
 
     path('nuevo/', views.crear_Evento, name='newEvent'),
 ]

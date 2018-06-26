@@ -5,6 +5,6 @@ from django.contrib.auth.models import User
 
 #Saves user extra information that the Model User can't
 class User_extra(models.Model):
-	user = models.OneToOneField(User, on_delete = models.CASCADE)
+	user = models.OneToOneField(User, on_delete = models.CASCADE, default = 1)
 	organization = models.BooleanField()
 	profile_picture = models.FileField()

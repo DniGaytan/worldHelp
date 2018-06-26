@@ -60,7 +60,7 @@
               <h3 class="card-title">{{evento.activity_name}}</h3>
               <p class="card-text">{{evento.activity_description}}</p>
             </div>
-            <a href="{% url 'activities:Act Details' evento.id %}" class="btn btn-primary">Conoce mas</a>
+            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary">Conoce mas</a>
             {% if evento.activity_type == 'vida'%}
                 <div class="eje-carta" style="background-color: green; height: 11px; width: auto; margin: 0;"></div>
               {% elif evento.activity_type == 'innovacion'%}

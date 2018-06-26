@@ -16,11 +16,14 @@
                     <input type="text" placeholder="Search.." name="search">
                    </form>
               </div>
+              <div>
+                <a href="{% url 'activities:newEvent' %}"> crear Evento </a>
+              </div>
           </div>
 
 
   <!-- Cartas de las activididades en filas de 4 -->
-      <div class = "container-fluid event-wrapper">
+      <div class = "container-fluid event-wrapper" style="min-height: 754px">
         <div class="row" style="margin: 0 auto;">
         <!-- Caja a la izquierda para filtrar por fecha -->
                 <div clas="container" align="left" style="margin-bottom: 20px">
@@ -52,7 +55,7 @@
                         <h3 class="card-title">{{evento.activity_name}}</h3>
                         <p class="card-text">{{evento.activity_description}}</p>
                       </div>
-                      <a href="{% url 'activities:Act Details' evento.id %}" class="btn btn-primary">Conoce mas</a>
+                      <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary">Conoce mas</a>
                       {% if evento.activity_type == 'vida'%}
                           <div class="eje-carta" style="background-color: green; height: 11px; width: auto; margin: 0;"></div>
                         {% elif evento.activity_type == 'innovacion'%}
@@ -68,6 +71,4 @@
                 {% endfor %}
         </div>
       </div>
-
-  <!-- Apartado de about WorldHelp -->
 {% endblock %}

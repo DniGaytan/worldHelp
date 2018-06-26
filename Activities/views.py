@@ -3,6 +3,8 @@ from .models import Activity, Donation
 from django.http import Http404
 from .forms import EventForm
 from django.contrib.auth.models import User
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.urls import reverse
 
 # Create your views here.
 # {{ display as this variable is in html}}
@@ -20,31 +22,36 @@ def details(request, activity_id):
     try:
         act = Activity.objects.get(pk=activity_id)
     except Activity.DoesNotExist :
-        raise Http404("Activitie does not exist")
+        raise Http404("Activity does not exist")
     return render(request, template_name='Activities/detail.html', context = {'act': act})
 
 def crear_Evento(request):
 
-    if request.method == 'POST':
-        form = EventForm(request.POST)
-        if form.is_valid():
-            user = User.objects.get(username = request.user.username)
-            event = form.save()
-            event.user = user
-            event.save()
-            return redirect(request, reverse('activities:details'), activity_id = Activity.objects.get(activity_name = event.activity_name))
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = EventForm(request.POST, request.FILES)
+            if form.is_valid():
+                form.user = User.objects.get(username = request.user.username)
+                event = form.save()
+                event.save()
+                return redirect(reverse('activities:actDetails', kwargs = {'activity_id': event.id}))
+            else:
+                context = {
+                    'form': EventForm(None),
+                    'errorList': form.errors
+                }
+
+                print(form.errors)
+
+                return render(request, template_name= "Activities/newEvent.html", context = context)
         else:
             context = {
-                'form': form
+                'form': EventForm(None)
             }
-            return render(request, template_name = 'Activities/newEvent.html', context = context )
-        
-    else:
-        context = {
-            'form': EventForm(None)
-        }
 
-        return render(request, template_name = 'Activities/newEvent.html', context = context )
+            return render(request, template_name="Activities/newEvent.html", context = context)
+    else:
+        raise Http404
 
 
 

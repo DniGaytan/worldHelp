@@ -3,7 +3,7 @@
 
 {% block bodyContent %}
 <div style='margin: 0 50rem;'>
-	<form action="{% url 'activities:newEvent' %}" method='post'>
+	<form enctype="multipart/form-data" action="{% url 'activities:newEvent' %}" method='post'>
 		{% csrf_token %}
 		{% for formField in form %}
 			<label for='{{formField.id_of_label}}'>{{formField.label}}:</label>
