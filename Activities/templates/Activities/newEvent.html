@@ -1,0 +1,15 @@
+{% extends 'Activities/base.html' %}
+{% load static from staticfiles %}
+
+{% block bodyContent %}
+<div style='margin: 0 50rem;'>
+	<form action="{% url 'activities:newEvent' %}" method='post'>
+		{% csrf_token %}
+		{% for formField in form %}
+			<label for='{{formField.id_of_label}}'>{{formField.label}}:</label>
+			{{formField}}
+		{% endfor %}
+  		<button type="submit" class="btn btn-primary" style='margin: 1rem 0;'>Crear Evento</button>
+	</form>
+</div>
+{% endblock %}

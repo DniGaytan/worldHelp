@@ -31,9 +31,6 @@ class Activity(models.Model):
     )
 
 
-    def __str__(self):
-        return self.activity_name
-
 
 class Donation(models.Model):
     MONETARY = 'MTR'
