@@ -28,3 +28,11 @@ class DonationForm(forms.ModelForm):
                         'donation_name': forms.TextInput(attrs={'class': 'form-control', 'value': ""})
                 }
                 exclude = ("activity",)
+
+
+class ContributionForm(forms.Form):
+        name = forms.CharField(widget= forms.TextInput(attrs={'class':'form-control'}), label='Nombre')
+        message = forms.CharField(widget= forms.Textarea(attrs={'class':'form-control'}), label='Mensaje')
+        phoneNumber = forms.CharField(widget= forms.TextInput(attrs={'class':'form-control'}), label='Telefono con lada')
+        sender = forms.EmailField(widget= forms.TextInput(attrs={'class':'form-control'}), label='Correo')
+

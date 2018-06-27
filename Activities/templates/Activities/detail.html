@@ -7,45 +7,60 @@
 
 
 {% block bodyContent%}
-  <!-- # -->
-      <div class="container-fluid" style="min-height: 889px;">
-          <div class="row" style="padding-left: 10px">
-              <div>
-                  <img src="{{act.activity_picture.url}}" width="500 px" height="300 px">
-              </div>
-              <div class="act-info" style="padding-left: 40px" >
-                  <br>
-                  <br>
-                  <br>
-                  <h1>{{ act.user }}</h1>
-                  <br>
-                  <h3 align="center"> <a href="/user">{{ act.user }} </a></h3>
-                  <br>
-                  <a href="{% url 'activities:newDonation' act.id %}">Añadir donacion</a>
-
-                  {% for donation in donations%}
-                    <div>
-                      <h3>{{donation.donation_name}}</h3>
-                      <p>{{donation.donation_description}}</p>
-                      <h4>{{donation.donation_type}}</h4>
-                    </div>
-                  {% endfor %}
-              </div>
-         </div>
-          <br>
-              <hr class="style1">
-          <br>
-          <div class="row" style="padding-left: 10px">
-              <br>
-              <div>
-                  <h3>Descripción</h3>
-                  <h4 class="col-md-10">{{ act.activity_description }}</h4>
-              </div>
-              <div>
-                  <h4>Fecha</h4>
-                  <h5 class="col-md-12" class="text-secondary">{{ act.activity_start_date }}</h5>
-                  <h5 class="col-md-12">{{ act.activity_end_date }}</h5>
-              </div>
-          </div>
+  <div class="container-fluid" style="padding:0;">
+    <div class="row">
+      <div class="col-5">
+        <img src="{{act.activity_picture.url}}" class=" rounded-bottom" width="800px">
       </div>
+
+      <div class="col-6"id="description">
+        <div id="description-title" style="text-align: center;">
+          <h2>Descripcion del evento: </h2>
+        </div>
+        <div id="description-body" style="margin-top: 50px; margin-left: 100px; margin-right: 100px; margin-bottom: 100px; text-align: justify;">
+          <h5>{{act.activity_description}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="organization-section" style="margin-top: 50px; margin-bottom:50px;">
+      <div class="container">
+        <div class="row" style="text-align: center;">
+          <div class="col-md-12">
+            <h2>Organizador: </h2>
+            <h5>{{act.user}}</h5>
+            <h5>{{act.user.email}}</h5>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div id="donations-section">
+    <div class="container-fluid">
+      <div class="row">
+        {% for donation in donations %}
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{donation.donation_name}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{donation.donation_type}}</h6>
+              <p class="card-text">{{donation.donation_description}}</p>
+              <div  style="text-align: left; margin: auto auto auto auto; margin-bottom: 0; height:20px; width: 80px;">
+                <a href="{% url 'activities:contribution' donation.id %}" class="card-link">Contribuir</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        {% if act.user == request.user and request.user.is_authenticated is not None%}
+          <div class="card" style="width: 18rem;">
+            <div class="card-body" style="text-align: center;">
+                <h5 class="card-title">Añadir donacion</h5>
+                <a href="{% url 'activities:newDonation' act.id %}" class="material-icons" style="font-size: 60px; text-decoration: none">add</i></a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+      
 {% endblock %}

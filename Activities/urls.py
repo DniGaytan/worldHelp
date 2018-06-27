@@ -8,6 +8,7 @@ urlpatterns = [
     path('',views.events, name = 'Events'),
     path('details/<activity_id>/', views.details, name='actDetails'),
     path('nuevo/', views.crear_evento, name='newEvent'),
-    path('nuevo/<activity_id>/donacion', views.crear_donacion, name="newDonation")
+    path('nuevo/<activity_id>/donacion', views.crear_donacion, name="newDonation"),
+    path('contribuir/<donation_id>/', views.contribuir, name="contribution")
 
 ]
