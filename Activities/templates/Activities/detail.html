@@ -9,24 +9,24 @@
 {% block bodyContent%}
   <div class="container-fluid" style="padding:0;">
     <div class="row">
-      <div class="col-5">
+      <div style="margin: auto;" >
         <img src="{{act.activity_picture.url}}" class=" rounded-bottom" width="800px">
-      </div>
-
-      <div class="col-6"id="description">
-        <div id="description-title" style="text-align: center;">
-          <h2>Descripcion del evento: </h2>
-        </div>
-        <div id="description-body" style="margin-top: 50px; margin-left: 100px; margin-right: 100px; margin-bottom: 100px; text-align: justify;">
-          <h5>{{act.activity_description}}</h5>
-        </div>
       </div>
     </div>
   </div>
 
+      <div class="card" id="description">
+        <div id="description-title" style="text-align: center;">
+          <h2>Descripcion del evento: </h2>
+        </div>
+        <div id="description-body" style="margin-top: 50px; margin-left: 100px; margin-right: 100px; margin-bottom: 100px; text-align: center;">
+          <h5>{{act.activity_description}}</h5>
+        </div>
+      </div>
+
   <div id="organization-section" style="margin-top: 50px; margin-bottom:50px;">
       <div class="container">
-        <div class="row" style="text-align: center;">
+        <div class="row card" style="text-align: center;">
           <div class="col-md-12">
             <h2>Organizador: </h2>
             <h5>{{act.user}}</h5>
