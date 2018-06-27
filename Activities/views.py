@@ -59,7 +59,8 @@ def crear_evento(request):
         raise Http404
 
 def crear_donacion(request, activity_id):
-    if request.user.is_authenticated :
+    activity = Activity.objects.get(pk=activity_id)
+    if request.user.is_authenticated and activity.user is request.user:
         if request.method == 'POST':
             form = DonationForm(request.POST)
             if form.is_valid():
@@ -82,5 +83,10 @@ def crear_donacion(request, activity_id):
             }
             return render(request, template_name="Activities/newDonation.html", context = context)
     else:
-        raise Http404('Prohibido pasar')
+        if not request.user.is_authenticated:
+            raise Http404('No has iniciado sesion')
+        elif(activity.user is not request.user):
+            raise Http404('Tu no eres el propietario de esta actividad')
+        else:
+            raise Http404('Algo raro paso. Si crees que esto es un error reportalo al administrador del sitio')
 
