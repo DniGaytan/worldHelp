@@ -116,7 +116,6 @@ def contribuir(request, donation_id):
 
             return render(request, template_name='Activities/contribution.html', context = context)
 
-
     else:
         context = {
             'form': ContributionForm(None),
