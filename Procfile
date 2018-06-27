@@ -1,4 +1,4 @@
 web: gunicorn worldHelp.wsgi —-log-file -
-web: gunicorn Principal:app --preload
-web: gunicorn Activities:app --preload
-web: gunicorn Users:app --preload
+web: gunicorn Principal:Principal --preload
+web: gunicorn Activities:Activities --preload
+web: gunicorn Users:Users --preload
