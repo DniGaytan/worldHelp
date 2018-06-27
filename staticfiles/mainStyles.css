@@ -1,0 +1,213 @@
+body {
+  padding-top: 56px;
+  background: #f7f7f7;
+}
+
+.navbar {
+  background-color: #5680e9;
+}
+.navbar .navbar-brand {
+  color: #073b48;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #5ab9ea;
+}
+.navbar .navbar-text {
+  color: #073b48;
+}
+.navbar .navbar-text a {
+  color: #5ab9ea;
+}
+.navbar .navbar-text a:hover,
+.navbar .navbar-text a:focus {
+  color: #5ab9ea; 
+}
+.navbar .navbar-nav .nav-link {
+  color: #073b48;
+  border-radius: .25rem;
+  margin: 0 0.25em;
+}
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+  color: #5ab9ea;
+}
+.navbar .navbar-nav .nav-item.active .nav-link,
+.navbar .navbar-nav .nav-item.active .nav-link:hover,
+.navbar .navbar-nav .nav-item.active .nav-link:focus,
+.navbar .navbar-nav .nav-item.show .nav-link,
+.navbar .navbar-nav .nav-item.show .nav-link:hover,
+.navbar .navbar-nav .nav-item.show .nav-link:focus {
+  color: #5ab9ea;
+  background-color: #c1c8e4;
+}
+.navbar .navbar-toggle {
+  border-color: #c1c8e4;
+}
+.navbar .navbar-toggle:hover,
+.navbar .navbar-toggle:focus {
+  background-color: #c1c8e4;
+}
+.navbar .navbar-toggle .navbar-toggler-icon {
+  color: #073b48;
+}
+.navbar .navbar-collapse,
+.navbar .navbar-form {
+  border-color: #073b48;
+}
+.navbar .navbar-link {
+  color: #073b48;
+}
+.navbar .navbar-link:hover {
+  color: #5ab9ea;
+}
+
+@media (max-width: 575px) {
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #073b48;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #5ab9ea;
+  }
+  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #5ab9ea;
+    background-color: #c1c8e4;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #073b48;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #5ab9ea;
+  }
+  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #5ab9ea;
+    background-color: #c1c8e4;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #073b48;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #5ab9ea;
+  }
+  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #5ab9ea;
+    background-color: #c1c8e4;
+  }
+}
+
+@media (max-width: 1199px) {
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
+    color: #073b48;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+    color: #5ab9ea;
+  }
+  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
+    color: #5ab9ea;
+    background-color: #c1c8e4;
+  }
+}
+
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
+  color: #073b48;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
+  color: #5ab9ea;
+}
+.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
+  color: #5ab9ea;
+  background-color: #c1c8e4;
+}
+
+.event-wrapper{
+  background-color: #f7f7f7;
+  padding: 2rem;
+}
+
+
+.card{
+  margin: 0.7rem auto;
+}
+
+.center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.carousel-color-letra-titulo{
+  font-family: arial;
+  color: #5ab9ea;
+}
+
+.carousel-color-letra-parrafo{
+  font-family: arial;
+  font-size: 18px;
+  color: #b8c6c4;
+}
+
+.goal-title{
+  font-family: arial;
+  margin: 2% 45%;
+}
+
+.description-section{
+  padding-top: 3.5rem;
+  background-color: #f7f7f7;
+}
+
+.description-body p{
+  text-align: justify;
+}
+
+.description-body h2{
+  font-weight: 600;
+}
+
+.description-body h4{
+  font-weight:600;
+
+}
+
+.partner-section{
+  margin: 0;
+  padding: 1rem;
+  background-color: #f7f7f7;
+}
+
+.partner-title{
+  margin:2% 45%;
+}
+
+.partner-name{
+  margin: 0.5rem auto;
+}
+
+.partner-logo{
+  height: 100px;
+  width: auto;
+  background-image: none;
+}
+
+.footer-text{
+  font-family: arial;
+  font-size: 18px;
+  font-weight: 600;
+  color: #c1c8e4; 
+}
+
+.card-section-title{
+  font-weight: 600;
+}
