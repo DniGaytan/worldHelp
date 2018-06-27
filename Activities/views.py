@@ -96,31 +96,36 @@ def crear_donacion(request, activity_id):
             raise Http404('Algo raro paso. Si crees que esto es un error reportalo al administrador del sitio')
 
 def contribuir(request, donation_id):
-    if request.method == 'POST':
-        form = ContributionForm(request.POST)
-        if form.is_valid():
-            send_mail(
-                subject = Donation.objects.get(pk=donation_id).donation_type,
-                message = form.cleaned_data['message'] + "\n" + "de: "+ form.cleaned_data['name'] + "\n" + "tel: " + form.cleaned_data['phoneNumber'],
-                from_email = form.cleaned_data['sender'],
-                recipient_list = [Activity.objects.get(pk=Donation.objects.get(pk=donation_id).activity.id).user.email],
-                fail_silently = False
-            )
 
-            return redirect(reverse('activities:actDetails', kwargs={'activity_id': Donation.objects.get(pk=donation_id).activity.id }))
+    if request.user.is_authenticated:
+        if request.method == 'POST':
+            form = ContributionForm(request.POST)
+            if form.is_valid():
+                send_mail(
+                    subject = Donation.objects.get(pk=donation_id).donation_type,
+                    message = form.cleaned_data['message'] + "\n" + "de: "+ form.cleaned_data['name'] + "\n" + "tel: " + form.cleaned_data['phoneNumber'],
+                    from_email = form.cleaned_data['sender'],
+                    recipient_list = [Activity.objects.get(pk=Donation.objects.get(pk=donation_id).activity.id).user.email],
+                    fail_silently = False
+                )
+
+                return redirect(reverse('activities:actDetails', kwargs={'activity_id': Donation.objects.get(pk=donation_id).activity.id }))
+            else:
+                context = {
+                'form': ContributionForm,
+                'donation_id': donation_id
+                }
+
+                return render(request, template_name='Activities/contribution.html', context = context)
+
         else:
             context = {
-            'form': ContributionForm,
-            'donation_id': donation_id
+                'form': ContributionForm(None),
+                'donation_id': donation_id
             }
 
             return render(request, template_name='Activities/contribution.html', context = context)
-
     else:
-        context = {
-            'form': ContributionForm(None),
-            'donation_id': donation_id
-        }
 
-        return render(request, template_name='Activities/contribution.html', context = context)
+        return redirect(reverse('principal:Main'))
 
