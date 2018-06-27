@@ -36,14 +36,14 @@ class Activity(models.Model):
 
 
 class Donation(models.Model):
-    MONETARY = 'monetario'
-    RESOURCE = 'recursos'
-    VOLUNTEER = 'voluntariado'
+    MONETARY = 'MTR'
+    RESOURCE = 'RSR'
+    VOLUNTEER = 'VLT'
 
     DONATION_TYPES = (
-        (MONETARY, 'Monetario'),
-        (RESOURCE, 'Recursos'),
-        (VOLUNTEER, 'Voluntariado')
+        (MONETARY, 'Monetary'),
+        (RESOURCE, 'Resources'),
+        (VOLUNTEER, 'Volunteer')
     )
 
     activity = models.ForeignKey(Activity, default = 42, on_delete=models.CASCADE)
