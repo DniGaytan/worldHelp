@@ -16,8 +16,6 @@ class EventForm(forms.ModelForm):
                 }
                 exclude = ("user",)
 
-
-
 class DonationForm(forms.ModelForm):
         class Meta:
                 model = Donation
@@ -28,7 +26,6 @@ class DonationForm(forms.ModelForm):
                         'donation_name': forms.TextInput(attrs={'class': 'form-control', 'value': ""})
                 }
                 exclude = ("activity",)
-
 
 class ContributionForm(forms.Form):
         name = forms.CharField(widget= forms.TextInput(attrs={'class':'form-control'}), label='Nombre')
