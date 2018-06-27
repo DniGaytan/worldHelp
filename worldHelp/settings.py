@@ -26,7 +26,7 @@ SECRET_KEY = 'k7r_uqi!^mi@7xh%mlfkozbu8&ud%d3qfr4=cgl23^@-sn78ir'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['whispering-stream-66202.herokuapp.com']
 
 #static url
 
