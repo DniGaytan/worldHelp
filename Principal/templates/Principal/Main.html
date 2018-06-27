@@ -46,39 +46,124 @@
     </div>
 
     <div class = "container-fluid event-wrapper">
+      <div class="row" style="margin 0 auto;">
+        <div style="margin: 0 auto;">
+          <h2 class="card-section-title">Algunos eventos</h2>
+        </div>
+      </div>
+
+      <div class="row" style="margin 0 auto;">
+        <div style="margin: 0 auto;">
+          <h2 class="card-section-title">Eventos eje vida</h2>
+        </div>
+      </div>
       <div class="row" style="margin: 0 auto 0 auto;">
-
-        {% for evento in eventos %}
-
-          <div class="card" style="width: 18rem;">
+        {% for evento in eventos_vida %}
+          <div class="card shadow-lg p-0 mb-5 bg-black rounded" style="width: 18rem;">
             {% if evento.activity_picture%}
               <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
             {% else %}
               <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
             {% endif %}
             <div class="card-body">
-              <h3 class="card-title">{{evento.activity_name}}</h3>
-              <p class="card-text">{{evento.activity_description}}</p>
+              <h4 class="card-title">{{evento.activity_name}}</h4>
+              {% with breveDescripcion=evento.activity_description|slice:"0:50"|add:"..." %}
+              <p class="card-text">{{breveDescripcion}}</p>
+              {% endwith %}
             </div>
-            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary">Conoce mas</a>
-            {% if evento.activity_type == 'vida'%}
-                <div class="eje-carta" style="background-color: green; height: 11px; width: auto; margin: 0;"></div>
-              {% elif evento.activity_type == 'innovacion'%}
-                <div class="eje-carta" style="background-color: yellow; height: 11px; width: auto; margin: 0;"></div>
-              {% elif evento.activity_type == 'energia'%}
-                <div class="eje-carta" style="background-color: orange; height: 11px; width: auto; margin: 0;"></div>
-              {% elif evento.activity_type == 'social'%}
-                <div class="eje-carta" style="background-color: blue; height: 11px; width: auto; margin: 0;"></div>
-              {% endif %}
+            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary" style="border-radius: 0">Conoce mas</a>
+            <div class="eje-carta" style="background-color: green; height: 11px; width: full; margin: 0;"></div>
           </div>
-
-        {% empty %}
-        <p>No hay nada en eventos</p>
+          {% empty %}
+          <p style="text-align: center;"> No hay eventos del eje vida</p>
         {% endfor %}
-      </div> 
-    </div>
+      </div>
 
-    <div class="description-section">
+      <div class="row" style="margin 0 auto;">
+        <div style="margin: 0 auto;">
+          <h2 class="card-section-title">Eventos eje innovacion</h2>
+        </div>
+      </div>
+      <div class="row" style="margin: 0 auto 0 auto;">
+        {% for evento in eventos_innovacion %}
+          <div class="card shadow-lg p-0 mb-5 bg-black rounded" style="width: 18rem;">
+            {% if evento.activity_picture%}
+              <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
+            {% else %}
+              <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+            {% endif %}
+            <div class="card-body">
+              <h4 class="card-title">{{evento.activity_name}}</h4>
+              {% with breveDescripcion=evento.activity_description|slice:"0:50"|add:"..." %}
+              <p class="card-text">{{breveDescripcion}}</p>
+              {% endwith %}
+            </div>
+            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary" style="border-radius: 0">Conoce mas</a>
+            <div class="eje-carta" style="background-color: yellow; height: 11px; width: full; margin: 0;"></div>
+          </div>
+        {% empty %}
+        <p style="text-align: center;"> No hay eventos del eje innovacion</p>
+        {% endfor %}
+      </div>
+
+      <div class="row" style="margin 0 auto;">
+        <div style="margin: 0 auto;">
+          <h2 class="card-section-title">Eventos eje energia</h2>
+        </div>
+      </div>
+      <div class="row" style="margin: 0 auto 0 auto;">
+        {% for evento in eventos_energia %}
+          <div class="card shadow-lg p-0 mb-5 bg-black rounded" style="width: 18rem;">
+            {% if evento.activity_picture%}
+              <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
+            {% else %}
+              <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+            {% endif %}
+            <div class="card-body">
+              <h4 class="card-title">{{evento.activity_name}}</h4>
+              {% with breveDescripcion=evento.activity_description|slice:"0:50"|add:"..." %}
+              <p class="card-text">{{breveDescripcion}}</p>
+              {% endwith %}
+            </div>
+            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary" style="border-radius: 0">Conoce mas</a>
+            <div class="eje-carta" style="background-color: yellow; height: 11px; width: full; margin: 0;"></div>
+          </div>
+        {% empty %}
+        <p style="text-align: center;"> No hay eventos del eje energia</p>
+        {% endfor %}
+      </div>
+
+      <div class="row" style="margin 0 auto;">
+        <div style="margin: 0 auto;">
+          <h2 class="card-section-title">Eventos eje social</h2>
+        </div>
+      </div>
+      <div class="row" style="margin: 0 auto 0 auto;">
+        {% for evento in eventos_social %}
+          <div class="card shadow-lg p-0 mb-5 bg-black rounded" style="width: 18rem;">
+            {% if evento.activity_picture%}
+              <img class="card-img-top" src="{{evento.activity_picture.url}}" alt="Card image cap" style="min-height: 150px; max-height: 150px;">
+            {% else %}
+              <img class="card-img-top" src="https://dummyimage.com/600x400/c1c8e4/291329.png&text=card+img" alt="Card image cap">
+            {% endif %}
+            <div class="card-body">
+              <h4 class="card-title">{{evento.activity_name}}</h4>
+              {% with breveDescripcion=evento.activity_description|slice:"0:50"|add:"..." %}
+              <p class="card-text">{{breveDescripcion}}</p>
+              {% endwith %}
+            </div>
+            <a href="{% url 'activities:actDetails' evento.id %}" class="btn btn-primary" style="border-radius: 0">Conoce mas</a>
+            <div class="eje-carta" style="background-color: yellow; height: 11px; width: full; margin: 0;"></div>
+          </div>
+        {% empty %}
+        <p style="text-align: center;"> No hay eventos del eje innovacion</p>
+        {% endfor %}
+      </div>
+
+    </div>
+    <hr class="hr-style" style="background-color: #b2b2b2; margin: 0;">
+
+    <div class="description-section" style="padding-bottom: 55px;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
@@ -102,6 +187,8 @@
         </div>
       </div>
     </div>
+
+    <hr class="hr-style" style="background-color: #b2b2b2; margin: 0;">
 
 
     <div class="partner-section">

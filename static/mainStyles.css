@@ -1,5 +1,6 @@
 body {
   padding-top: 56px;
+  background: #f7f7f7;
 }
 
 .navbar {
@@ -130,7 +131,7 @@ body {
 }
 
 .event-wrapper{
-  background-color: #84ceeb;
+  background-color: #f7f7f7;
   padding: 2rem;
 }
 
@@ -205,4 +206,8 @@ body {
   font-size: 18px;
   font-weight: 600;
   color: #c1c8e4; 
+}
+
+.card-section-title{
+  font-weight: 600;
 }

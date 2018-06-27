@@ -21,7 +21,6 @@
                   <br>
                   <h3 align="center"> <a href="/user">{{ act.user }} </a></h3>
                   <br>
-                  <button type="button" class="btn btn-success" style="margin-left: 210px">Registrate</button>
                   <a href="{% url 'activities:newDonation' act.id %}">Añadir donacion</a>
 
                   {% for donation in donations%}
