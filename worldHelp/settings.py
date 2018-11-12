@@ -139,7 +139,7 @@ EMAIL_HOST = "smtp.gmail.com"
 
 EMAIL_HOST_USER = "dnigaytan07@gmail.com"
 
-EMAIL_HOST_PASSWORD = "clevergoox_98"
+EMAIL_HOST_PASSWORD = "...."
 
 EMAIL_PORT = 587
 
